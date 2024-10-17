@@ -1,0 +1,11 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#volcanic_caverns:has_volcanic_caverns",
+  "features": [
+    "volcanic_caverns:underground_magma",
+	"volcanic_caverns:underground_smooth_basalt",
+	"volcanic_caverns:extra_coal_ore",
+	"volcanic_caverns:extra_diamond_ore"
+  ],
+  "step": "underground_ores"
+}

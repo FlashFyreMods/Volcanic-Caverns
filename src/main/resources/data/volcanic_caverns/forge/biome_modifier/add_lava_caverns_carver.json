@@ -1,0 +1,5 @@
+{
+  "type": "volcanic_caverns:add_carver",
+  "biomes": "#volcanic_caverns:has_volcanic_caverns",
+  "carver": "volcanic_caverns:lava_caverns"
+}

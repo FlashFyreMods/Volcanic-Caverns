@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#volcanic_caverns:has_volcanic_caverns",
+  "features": "volcanic_caverns:lava_spring",
+  "step": "fluid_springs"
+}
