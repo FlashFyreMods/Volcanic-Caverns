@@ -1,0 +1,17 @@
+[31Oct2024 15:48:53.260] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forge_userdev_data, --assetIndex, 12, --assetsDir, C:\Users\Tom\.gradle\caches\forge_gradle\assets, --gameDir, ., --mod, volcanic_caverns, --all, --output, D:\Documents\Minecraft\Mods\Volcanic Caverns\src\generated\resources, --existing, D:\Documents\Minecraft\Mods\Volcanic Caverns\src\main\resources]
+[31Oct2024 15:48:53.262] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: JVM identified as Oracle Corporation OpenJDK 64-Bit Server VM 17.0.1+12-39
+[31Oct2024 15:48:53.262] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.1.2 starting: java version 17.0.1 by Oracle Corporation; OS Windows 10 arch amd64 version 10.0
+[31Oct2024 15:48:53.319] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forge_userdev_data
+[31Oct2024 15:48:53.370] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=jar:file:///C:/Users/Tom/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar!/ Service=ModLauncher Env=UNKNOWN
+[31Oct2024 15:48:53.828] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[31Oct2024 15:48:54.359] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forge_userdev_data' with arguments [--gameDir, ., --assetsDir, C:\Users\Tom\.gradle\caches\forge_gradle\assets, --assetIndex, 12, --mod, volcanic_caverns, --all, --output, D:\Documents\Minecraft\Mods\Volcanic Caverns\src\generated\resources, --existing, D:\Documents\Minecraft\Mods\Volcanic Caverns\src\main\resources]
+[31Oct2024 15:48:57.117] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 49.1.12, for MC 1.20.4 with MCP 20231207.112700
+[31Oct2024 15:48:57.117] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v49.1.12 Initialized
+[31Oct2024 15:48:57.161] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Opening jdk.naming.dns/com.sun.jndi.dns to java.naming
+[31Oct2024 15:48:57.393] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [volcanic_caverns]
+[31Oct2024 15:48:57.430] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Tom/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.4-49.1.12_mapped_official_1.20.4/forge-1.20.4-49.1.12_mapped_official_1.20.4.jar%230!/assets/.mcassetsroot' uses unexpected schema
+[31Oct2024 15:48:57.430] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Tom/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.4-49.1.12_mapped_official_1.20.4/forge-1.20.4-49.1.12_mapped_official_1.20.4.jar%230!/data/.mcassetsroot' uses unexpected schema
+[31Oct2024 15:48:57.575] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
+[31Oct2024 15:48:57.760] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 185 ms
+[31Oct2024 15:48:57.761] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 186 ms
+[31Oct2024 15:48:57.763] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 17, old count: 17, new count: 18, removed stale: 0, written: 0
