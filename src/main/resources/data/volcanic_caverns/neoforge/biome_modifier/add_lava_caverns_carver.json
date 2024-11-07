@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_carvers",
+  "biomes": "#volcanic_caverns:has_volcanic_caverns",
+  "carvers": "volcanic_caverns:lava_caverns",
+  "step": "air"
+}

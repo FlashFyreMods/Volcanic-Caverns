@@ -1,14 +1,22 @@
 package com.flashfyre.volcanic_caverns;
 
 import java.util.concurrent.CompletableFuture;
+import java.util.function.Supplier;
 
+import com.flashfyre.volcanic_caverns.carver.LavaCavernsCarver;
+import com.flashfyre.volcanic_caverns.registry.VCFeatures;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.world.level.levelgen.carver.WorldCarver;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.data.event.GatherDataEvent;
+import net.neoforged.neoforge.event.level.LevelEvent;
+import net.neoforged.neoforge.registries.DeferredRegister;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.flashfyre.volcanic_caverns.data.VCWorldGenData;
-import com.flashfyre.volcanic_caverns.registry.VCBiomeModifierSerializers;
-import com.flashfyre.volcanic_caverns.registry.VCCarvers;
-import com.flashfyre.volcanic_caverns.registry.VCFeatures;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -18,12 +26,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.data.event.GatherDataEvent;
-import net.minecraftforge.event.level.LevelEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(VolcanicCaverns.MOD_ID)
 public class VolcanicCaverns
@@ -31,22 +33,22 @@ public class VolcanicCaverns
 	public static final String MOD_ID = "volcanic_caverns";
     public static final Logger LOGGER = LogManager.getLogger();
     public static VolcanicCaverns instance;
-    
 
-    public VolcanicCaverns() {
+	public static final DeferredRegister<WorldCarver<?>> CARVERS = DeferredRegister.create(BuiltInRegistries.CARVER, MOD_ID);
+	public static final Supplier<LavaCavernsCarver> LAVA_CAVERNS = VolcanicCaverns.CARVERS.register("lava_caverns", LavaCavernsCarver::new);
+
+	public VolcanicCaverns(IEventBus modBus) {
     	
     	instance = this;
-    	
-    	IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
-        IEventBus forgeBus = MinecraftForge.EVENT_BUS;
+
+        IEventBus neoBus = NeoForge.EVENT_BUS;
         
         modBus.addListener(this::gatherData);
-        forgeBus.addListener(this::worldLoad);
-        forgeBus.addListener(this::createWorldSpawnPosition);
+		neoBus.addListener(this::worldLoad);
+		neoBus.addListener(this::createWorldSpawnPosition);
         
-        VCCarvers.CARVERS.register(modBus);
+        CARVERS.register(modBus);
         VCFeatures.FEATURES.register(modBus);
-        VCBiomeModifierSerializers.BIOME_MODIFIER_SERIALIZERS.register(modBus);        
     }
     
 	public void worldLoad(LevelEvent.Load event) {
@@ -59,7 +61,7 @@ public class VolcanicCaverns
 	
 	private void setWorldSeed(LevelEvent event) {
 		if(event.getLevel() instanceof ServerLevel serverLevel) {
-			VCCarvers.LAVA_CAVERNS.get().setSeed(serverLevel.getSeed());
+			LAVA_CAVERNS.get().setSeed(serverLevel.getSeed());
 		}
 	}
 	
@@ -69,7 +71,7 @@ public class VolcanicCaverns
 		PackOutput packOutput = generator.getPackOutput();
 		generator.addProvider(event.includeClient(), new VCWorldGenData(packOutput, lookupProvider));
 	}
-	
+
 	public static class TagKeys {
 		public static final TagKey<Block> LAVA_CAVERNS_REPLACEABLE_BLOCKS = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "lava_caverns_carver_replaceables"));
 	    public static final TagKey<Block> LAVA_SPRING_VALID = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "is_lava_spring_valid"));

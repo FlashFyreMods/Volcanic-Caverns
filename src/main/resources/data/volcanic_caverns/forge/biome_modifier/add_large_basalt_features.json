@@ -1,9 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#volcanic_caverns:has_volcanic_caverns",
-  "features": [
-    "volcanic_caverns:basalt_spike",
-	"volcanic_caverns:basalt_pillar"
-  ],
-  "step": "local_modifications"
-}

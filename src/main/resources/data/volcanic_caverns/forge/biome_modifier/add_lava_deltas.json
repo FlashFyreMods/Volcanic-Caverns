@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#volcanic_caverns:has_volcanic_caverns",
-  "features": "volcanic_caverns:delta",
-  "step": "lakes"
-}

@@ -22,7 +22,7 @@ public static final ResourceKey<ConfiguredWorldCarver<?>> LAVA_CAVERNS = createK
 	
 	public static void bootstrap(BootstapContext<ConfiguredWorldCarver<?>> ctx) {
 		HolderGetter<Block> holderGetter = ctx.lookup(Registries.BLOCK);
-		ctx.register(LAVA_CAVERNS, VCCarvers.LAVA_CAVERNS.get().configured(new LavaCavernsConfiguration(
+		ctx.register(LAVA_CAVERNS, VolcanicCaverns.LAVA_CAVERNS.get().configured(new LavaCavernsConfiguration(
 				-0.1F,
 				1.0F,
 				ConstantHeight.of(VerticalAnchor.aboveBottom(16)), // y
