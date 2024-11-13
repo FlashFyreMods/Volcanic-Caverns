@@ -61,7 +61,7 @@ public class LavaCavernsCarver extends WorldCarver<LavaCavernsConfiguration> {
 			Function<BlockPos, Holder<Biome>> function, RandomSource randSource, Aquifer aquifer, ChunkPos chunkPos,
 			CarvingMask carvingMask) {
 		if(!chunk.getPos().equals(chunkPos)) return false;
-		NormalNoise noise = ctx.randomState().getOrCreateNoise(Noises.CONTINENTALNESS);
+		//NormalNoise noise = ctx.randomState().getOrCreateNoise(Noises.CONTINENTALNESS);
 		boolean flag = false;
 		BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
         BlockPos.MutableBlockPos checkPos = new BlockPos.MutableBlockPos();
@@ -75,9 +75,9 @@ public class LavaCavernsCarver extends WorldCarver<LavaCavernsConfiguration> {
 				int topY = baseY + ySpread;
 				int bottomY = Math.max(baseY-ySpread, ctx.getMinGenY() + 1) ;
 				for(int y = topY; y > bottomY; y--) {
-					float continentsValue = (float) noise.getValue(x * 0.25F, 0, z * 0.25F);
-					continentsValue = Mth.sqrt(-Mth.square(5*(Mth.clamp(continentsValue, 0, 0.2F))-1)+1);
-					float noiseVal = this.getNoiseVal(baseY, ySpread, x * config.xzScale, y, z * config.xzScale) * continentsValue;
+					//float continentsValue = (float) noise.getValue(x * 0.25F, 0, z * 0.25F);
+					//continentsValue = Mth.sqrt(-Mth.square(5*(Mth.clamp(continentsValue, 0, 0.2F))-1)+1);
+					float noiseVal = this.getNoiseVal(baseY, ySpread, x * config.xzScale, y, z * config.xzScale); //* continentsValue;
 					if(noiseVal < config.noiseThreshold && !carvingMask.get(x,y,z)) {
 						pos.set(x, y, z);
 						carvingMask.set(x, y, z);
