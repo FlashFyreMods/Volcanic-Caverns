@@ -4,6 +4,12 @@ import java.util.function.Function;
 
 import javax.annotation.Nullable;
 
+import com.flashfyre.volcanic_caverns.VolcanicCaverns;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.util.Mth;
+import net.minecraft.world.level.levelgen.DensityFunction;
+import net.minecraft.world.level.levelgen.Noises;
+import net.minecraft.world.level.levelgen.synth.NormalNoise;
 import org.apache.commons.lang3.mutable.MutableBoolean;
 
 import com.flashfyre.volcanic_caverns.util.FastNoiseLite;
@@ -55,6 +61,7 @@ public class LavaCavernsCarver extends WorldCarver<LavaCavernsConfiguration> {
 			Function<BlockPos, Holder<Biome>> function, RandomSource randSource, Aquifer aquifer, ChunkPos chunkPos,
 			CarvingMask carvingMask) {
 		if(!chunk.getPos().equals(chunkPos)) return false;
+		NormalNoise noise = ctx.randomState().getOrCreateNoise(Noises.CONTINENTALNESS);
 		boolean flag = false;
 		BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
         BlockPos.MutableBlockPos checkPos = new BlockPos.MutableBlockPos();
@@ -67,11 +74,12 @@ public class LavaCavernsCarver extends WorldCarver<LavaCavernsConfiguration> {
 				int ySpread = (int) config.yScale.sample(randSource); // The vertical spread in blocks in either direction (1/2 the max height of the caverns)
 				int topY = baseY + ySpread;
 				int bottomY = Math.max(baseY-ySpread, ctx.getMinGenY() + 1) ;
-				//VolcanicCaverns.LOGGER.info("lowest y:" + bottomY + " when local xz is x" + localX + " z" + localZ);
-				for(int y = topY; y > bottomY; y--) {					
-					float noiseVal = this.getNoiseVal(baseY, ySpread, x * config.xzScale, y, z * config.xzScale);
+				for(int y = topY; y > bottomY; y--) {
+					float continentsValue = (float) noise.getValue(x * 0.25F, 0, z * 0.25F);
+					continentsValue = Mth.sqrt(-Mth.square(5*(Mth.clamp(continentsValue, 0, 0.2F))-1)+1);
+					float noiseVal = this.getNoiseVal(baseY, ySpread, x * config.xzScale, y, z * config.xzScale) * continentsValue;
 					if(noiseVal < config.noiseThreshold && !carvingMask.get(x,y,z)) {
-						pos.set(localX, y, localZ);
+						pos.set(x, y, z);
 						carvingMask.set(x, y, z);
 						flag |= this.carveBlock(ctx, config, chunk, function, carvingMask, pos, checkPos, aquifer, foundSurface);
 					}
@@ -103,7 +111,6 @@ public class LavaCavernsCarver extends WorldCarver<LavaCavernsConfiguration> {
         if (blockState.is(Blocks.GRASS_BLOCK) || blockState.is(Blocks.MYCELIUM)) {
             foundSurface.setTrue();
         }
-
         if (this.canReplaceBlock(config, blockState)) {
         	BlockState carveState = this.getCarveState(context, config, pos, aquifer);
             if (carveState == null) {
@@ -124,10 +131,7 @@ public class LavaCavernsCarver extends WorldCarver<LavaCavernsConfiguration> {
         if (pos.getY() <= config.lavaLevel.resolveY(ctx)) {
             return LAVA.createLegacyBlock();
         } else {
-        	return Blocks.AIR.defaultBlockState();
-        	// this aquifer stuff seems to break with a list out of range error iirc, I think it's only at very low y levels. Not sure why this doesn't happen for vanilla carvers though
-        	// VolcanicCaverns.LOGGER.info("computing aquifer substance at x" + pos.getX() + " y"+ pos.getY() + " z"+ pos.getZ());
-        	// return aquifer.computeSubstance(new DensityFunction.SinglePointContext(pos.getX(), pos.getY(), pos.getZ()), 0.0F);
+        	return aquifer.computeSubstance(new DensityFunction.SinglePointContext(pos.getX(), pos.getY(), pos.getZ()), 0.0F);
         }
     }
 }

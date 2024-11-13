@@ -1,18 +1,30 @@
-[01Nov2024 03:33:23.513] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--mod, volcanic_caverns, --all, --output, D:\Documents\Minecraft\Mods\Volcanic Caverns\src\generated\resources, --existing, D:\Documents\Minecraft\Mods\Volcanic Caverns\src\main\resources, --launchTarget, forgedatauserdev, --assetIndex, asset-index, --assetsDir, C:\Users\Tom\.gradle\caches\minecraft\assets\1.20.4, --gameDir, ., --fml.neoForgeVersion, 20.4.237, --fml.fmlVersion, 2.0.17, --fml.mcVersion, 1.20.4, --fml.neoFormVersion, 20231207.154220]
-[01Nov2024 03:33:23.515] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.1 by Oracle Corporation; OS Windows 10 arch amd64 version 10.0
-[01Nov2024 03:33:23.587] [main/INFO] [net.neoforged.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
-[01Nov2024 03:33:23.622] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/Tom/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.13.1+mixin.0.8.5/618f4dff860cf2d6b5196073b1a5f5e0a8591acb/sponge-mixin-0.13.1+mixin.0.8.5.jar%23176!/ Service=ModLauncher Env=CLIENT
-[01Nov2024 03:33:23.794] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "neoforge-20.4.237.jar" of type MOD with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@58dea0a5
-[01Nov2024 03:33:23.795] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "main" of type MOD with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@58dea0a5
-[01Nov2024 03:33:23.795] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "" of type MOD with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@58dea0a5
-[01Nov2024 03:33:23.873] [main/INFO] [net.neoforged.fml.loading.moddiscovery.JarInJarDependencyLocator/]: Found 1 dependencies adding them to mods collection
-[01Nov2024 03:33:23.874] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "mixinextras-neoforge-0.3.5.jar" of type GAMELIBRARY with provider net.neoforged.fml.loading.moddiscovery.JarInJarDependencyLocator@6b530eb9
-[01Nov2024 03:33:24.646] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\Tom\.gradle\caches\minecraft\assets\1.20.4, --mod, volcanic_caverns, --all, --output, D:\Documents\Minecraft\Mods\Volcanic Caverns\src\generated\resources, --existing, D:\Documents\Minecraft\Mods\Volcanic Caverns\src\main\resources, --assetIndex, asset-index]
-[01Nov2024 03:33:25.081] [main/INFO] [net.neoforged.neoforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [volcanic_caverns]
-[01Nov2024 03:33:28.129] [modloading-worker-0/INFO] [net.neoforged.neoforge.common.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 20.4.237, for MC 1.20.4 with MCP 20231207.154220
-[01Nov2024 03:33:28.733] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/D:/Documents/Minecraft/Mods/Volcanic%20Caverns/.gradle/repositories/ng_dummy_ng/net/neoforged/neoforge/20.4.237/neoforge-20.4.237.jar%23192!/assets/.mcassetsroot' uses unexpected schema
-[01Nov2024 03:33:28.734] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/D:/Documents/Minecraft/Mods/Volcanic%20Caverns/.gradle/repositories/ng_dummy_ng/net/neoforged/neoforge/20.4.237/neoforge-20.4.237.jar%23192!/data/.mcassetsroot' uses unexpected schema
-[01Nov2024 03:33:28.924] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
-[01Nov2024 03:33:29.025] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 101 ms
-[01Nov2024 03:33:29.026] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 101 ms
-[01Nov2024 03:33:29.028] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 17, old count: 17, new count: 18, removed stale: 0, written: 0
+[13Nov2024 02:51:58.255] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--mod, volcanic_caverns, --all, --output, D:\Documents\Minecraft\Mods\Volcanic Caverns\src\generated\resources, --existing, D:\Documents\Minecraft\Mods\Volcanic Caverns\src\main\resources, --launchTarget, forgedatauserdev, --assetIndex, asset-index, --assetsDir, C:\Users\Tom\.gradle\caches\minecraft\assets, --gameDir, ., --fml.neoForgeVersion, 21.1.77, --fml.fmlVersion, 4.0.31, --fml.mcVersion, 1.21.1, --fml.neoFormVersion, 20240808.144430]
+[13Nov2024 02:51:58.258] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: JVM identified as Microsoft OpenJDK 64-Bit Server VM 21.0.3+9-LTS
+[13Nov2024 02:51:58.259] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 11.0.4+main.d2e20e43 starting: java version 21.0.3 by Microsoft; OS Windows 10 arch amd64 version 10.0
+[13Nov2024 02:51:58.334] [main/INFO] [net.neoforged.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
+[13Nov2024 02:51:58.363] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=union:/C:/Users/Tom/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.15.2+mixin.0.8.7/2af2f021d8e02a0220dc27a7a72b4666d66d44ca/sponge-mixin-0.15.2+mixin.0.8.7.jar%23135!/ Service=ModLauncher Env=CLIENT
+[13Nov2024 02:51:58.488] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "neoforge-21.1.77.jar" [locator: neoforge devenv provider ([D:\Documents\Minecraft\Mods\Volcanic Caverns\.gradle\repositories\ng_dummy_ng\net\neoforged\neoforge\21.1.77\neoforge-21.1.77.jar])]
+[13Nov2024 02:51:58.499] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "neoforge-21.1.77.jar" [locator: neoforge devenv provider ([D:\Documents\Minecraft\Mods\Volcanic Caverns\.gradle\repositories\ng_dummy_ng\net\neoforged\neoforge\21.1.77\neoforge-21.1.77.jar])]
+[13Nov2024 02:51:58.507] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "main" [locator: userdev mods and services, reader: mod manifest]
+[13Nov2024 02:51:58.514] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "neoforge-21.1.77.jar" [locator: userdev mods and services, reader: mod manifest]
+[13Nov2024 02:51:58.554] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found gamelibrary file "mixinextras-neoforge-0.4.1.jar" [locator: userdev mods and services, reader: mod manifest]
+[13Nov2024 02:51:58.670] [main/WARN] [net.neoforged.jarjar.selection.JarSelector/]: Attempted to select a dependency jar for JarJar which was passed in as source: library:mixinextras.neoforge. Using Mod File: C:\Users\Tom\.gradle\caches\modules-2\files-2.1\io.github.llamalad7\mixinextras-neoforge\0.4.1\eff97772ecd0dcf8e52cdbafd3b3ccec425f8314\mixinextras-neoforge-0.4.1.jar
+[13Nov2024 02:51:58.671] [main/INFO] [net.neoforged.fml.loading.moddiscovery.locators.JarInJarDependencyLocator/]: Found 1 dependencies adding them to mods collection
+[13Nov2024 02:51:58.671] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found library file "neoforge-coremods-21.1.77.jar" [parent: neoforge-21.1.77.jar, locator: jarinjar, reader: mod manifest]
+[13Nov2024 02:51:58.672] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/]: 
+     Mod List:
+		Name Version (Mod Id)
+
+		Minecraft 1.21.1 (minecraft)
+		NeoForge 21.1.77 (neoforge)
+		Volcanic Caverns 1.2.7 (volcanic_caverns)
+[13Nov2024 02:51:59.020] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\Tom\.gradle\caches\minecraft\assets, --mod, volcanic_caverns, --all, --output, D:\Documents\Minecraft\Mods\Volcanic Caverns\src\generated\resources, --existing, D:\Documents\Minecraft\Mods\Volcanic Caverns\src\main\resources, --assetIndex, asset-index]
+[13Nov2024 02:51:59.478] [main/INFO] [net.neoforged.neoforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [volcanic_caverns]
+[13Nov2024 02:51:59.493] [main/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.4.1).
+[13Nov2024 02:52:02.352] [modloading-worker-0/INFO] [net.neoforged.neoforge.common.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 21.1.77, for MC 1.21.1
+[13Nov2024 02:52:02.571] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/D:/Documents/Minecraft/Mods/Volcanic%20Caverns/.gradle/repositories/ng_dummy_ng/net/neoforged/neoforge/21.1.77/neoforge-21.1.77.jar%23189!/assets/.mcassetsroot' uses unexpected schema
+[13Nov2024 02:52:02.571] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/D:/Documents/Minecraft/Mods/Volcanic%20Caverns/.gradle/repositories/ng_dummy_ng/net/neoforged/neoforge/21.1.77/neoforge-21.1.77.jar%23189!/data/.mcassetsroot' uses unexpected schema
+[13Nov2024 02:52:02.671] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
+[13Nov2024 02:52:02.772] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 100 ms
+[13Nov2024 02:52:02.772] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 101 ms
+[13Nov2024 02:52:02.777] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 17, old count: 17, new count: 18, removed stale: 0, written: 3

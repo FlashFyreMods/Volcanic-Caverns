@@ -7,7 +7,7 @@ import com.flashfyre.volcanic_caverns.VolcanicCaverns;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -32,7 +32,7 @@ public class VCPlacedFeatures {
 	public static final ResourceKey<PlacedFeature> EXTRA_COAL_ORE = createKey("extra_coal_ore");
 	public static final ResourceKey<PlacedFeature> EXTRA_DIAMOND_ORE = createKey("extra_diamond_ore");
 	
-	public static void bootstrap(BootstapContext<PlacedFeature> ctx) {
+	public static void bootstrap(BootstrapContext<PlacedFeature> ctx) {
 		HolderGetter<ConfiguredFeature<?, ?>> holdergetter = ctx.lookup(Registries.CONFIGURED_FEATURE);
 		Holder<ConfiguredFeature<?, ?>> lavaSpring = holdergetter.getOrThrow(VCConfiguredFeatures.LAVA_SPRING);
 		Holder<ConfiguredFeature<?, ?>> delta = holdergetter.getOrThrow(VCConfiguredFeatures.DELTA);
@@ -54,7 +54,7 @@ public class VCPlacedFeatures {
 	}
 	
 	public static ResourceKey<PlacedFeature> createKey(String id) {
-		return ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(VolcanicCaverns.MOD_ID, id));
+		return ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(VolcanicCaverns.MOD_ID, id));
 	}
 	
 	private static List<PlacementModifier> orePlacement(int count, HeightRangePlacement heightRangePlacement) {

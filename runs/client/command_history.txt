@@ -1,0 +1,9 @@
+/locate biome #c:is_windswept
+/locate biome #volcanic_caverns:has_volcanic_caverns
+/execute if block ~ ~ ~ #minecraft:overworld_carver_replaceables
+/locate biome minecraft:jagged_peaks
+/tp @s 2694 105 -350
+/locate biome minecraft:cold_ocean
+/locate biome minecraft:ocean
+/locate biome minecraft:lukewarm_ocean
+/tp @s -442 148 -613

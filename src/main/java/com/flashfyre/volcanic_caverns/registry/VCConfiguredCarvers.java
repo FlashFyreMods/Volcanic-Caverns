@@ -5,7 +5,7 @@ import com.flashfyre.volcanic_caverns.carver.LavaCavernsConfiguration;
 
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.valueproviders.ConstantFloat;
@@ -20,7 +20,7 @@ public class VCConfiguredCarvers {
 	
 public static final ResourceKey<ConfiguredWorldCarver<?>> LAVA_CAVERNS = createKey("lava_caverns");
 	
-	public static void bootstrap(BootstapContext<ConfiguredWorldCarver<?>> ctx) {
+	public static void bootstrap(BootstrapContext<ConfiguredWorldCarver<?>> ctx) {
 		HolderGetter<Block> holderGetter = ctx.lookup(Registries.BLOCK);
 		ctx.register(LAVA_CAVERNS, VolcanicCaverns.LAVA_CAVERNS.get().configured(new LavaCavernsConfiguration(
 				-0.1F,
@@ -33,6 +33,6 @@ public static final ResourceKey<ConfiguredWorldCarver<?>> LAVA_CAVERNS = createK
 	}
 	
 	private static ResourceKey<ConfiguredWorldCarver<?>> createKey(String id) {
-		return ResourceKey.create(Registries.CONFIGURED_CARVER, new ResourceLocation(VolcanicCaverns.MOD_ID, id));
+		return ResourceKey.create(Registries.CONFIGURED_CARVER, ResourceLocation.fromNamespaceAndPath(VolcanicCaverns.MOD_ID, id));
 	}
 }

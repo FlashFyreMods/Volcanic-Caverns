@@ -7,7 +7,7 @@ import com.flashfyre.volcanic_caverns.feature.ImprovedLargeDripstoneConfig;
 
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -39,7 +39,7 @@ public class VCConfiguredFeatures {
 	public static final ResourceKey<ConfiguredFeature<?, ?>> EXTRA_COAL_ORE = createKey("extra_coal_ore");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> EXTRA_DIAMOND_ORE = createKey("extra_diamond_ore");
 	
-	public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> ctx) {
+	public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> ctx) {
 		HolderGetter<Block> holderGetter = ctx.lookup(Registries.BLOCK);
 		RuleTest overworldStoneTest = new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD);
 		RuleTest stoneReplaceableOreTest = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
@@ -59,6 +59,6 @@ public class VCConfiguredFeatures {
 	}
 	
 	public static ResourceKey<ConfiguredFeature<?, ?>> createKey(String id) {
-		return ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(VolcanicCaverns.MOD_ID, id));
+		return ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(VolcanicCaverns.MOD_ID, id));
 	}
 }

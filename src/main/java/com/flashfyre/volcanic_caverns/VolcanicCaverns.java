@@ -73,7 +73,7 @@ public class VolcanicCaverns
 	}
 
 	public static class TagKeys {
-		public static final TagKey<Block> LAVA_CAVERNS_REPLACEABLE_BLOCKS = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "lava_caverns_carver_replaceables"));
-	    public static final TagKey<Block> LAVA_SPRING_VALID = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "is_lava_spring_valid"));
+		public static final TagKey<Block> LAVA_CAVERNS_REPLACEABLE_BLOCKS = TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(MOD_ID, "lava_caverns_carver_replaceables"));
+	    public static final TagKey<Block> LAVA_SPRING_VALID = TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(MOD_ID, "is_lava_spring_valid"));
 	}
 }
